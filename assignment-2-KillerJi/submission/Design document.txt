@@ -1,0 +1,14 @@
+Calls
+	fn deposit_event
+ 	fn create
+Types 
+	Struct Kitty	
+		[u8;16]
+Storages
+	Kitties :double_map hasher(blake2_128_concat)T::AccountId,hasher(blake2_128_concat)u32=>Option<Kitty>;
+        	NextKittyId :u32 = 0; 
+Events
+	KittyCreated
+		AccountId
+		u32
+		Kitty

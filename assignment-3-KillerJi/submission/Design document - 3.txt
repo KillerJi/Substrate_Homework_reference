@@ -1,0 +1,19 @@
+Calls
+	fn deposit_event
+ 	fn create
+	fn breed
+Types 
+	enum Gender
+		{Male,Female}
+	Struct Kitty
+		{ dna:[u8;16], gender:Option<Gender>,}
+Storages
+	Kitties :double_map hasher(blake2_128_concat)T::AccountId,hasher(blake2_128_concat)u32=>Option<Kitty>
+        	NextKittyId get(fn next_kitty_id): map hasher(blake2_128_concat) T::AccountId => u32
+Events
+	KittyCreated(AccountId, u32, Kitty)
+	KittyBreed(AccountId, u32, Kitty)
+Error
+	KittiesIdOverflow,
+	KittiesNonExistent,
+	KittiesParentSexChooseError,
